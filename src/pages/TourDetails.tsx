@@ -442,10 +442,30 @@ export const TourDetails: React.FC = () => {
                   />
                 </div>
 
+                {/* Payment Section */}
+                <div className="mt-6 pt-6 border-t border-slate-200/80 text-center">
+                  <h4 className="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wide">
+                    Scan to Pay Booking Amount
+                  </h4>
+                  <div className="bg-[#F8F9FA] p-4 rounded-xl inline-block border border-slate-200/90 shadow-sm">
+                    <img 
+                      src="/payment-qr.jpg" 
+                      alt="Payment QR Code" 
+                      className="w-48 h-48 object-cover mx-auto mix-blend-multiply"
+                    />
+                    <div className="mt-3 text-lg font-bold text-[#E53E3E]">
+                      ₹ {tour.price.toLocaleString('en-IN')} / Person
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-500 mt-3 px-4">
+                    Please share the payment screenshot on WhatsApp after booking.
+                  </p>
+                </div>
+
                 {/* Book Now Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#E53E3E] hover:bg-red-600 text-white font-bold py-4 rounded-2xl text-base shadow-lg shadow-red-500/30 transition-all cursor-pointer hover:shadow-red-500/40"
+                  className="w-full bg-[#E53E3E] hover:bg-red-600 text-white font-bold py-4 rounded-2xl text-base shadow-lg shadow-red-500/30 transition-all cursor-pointer hover:shadow-red-500/40 mt-6"
                 >
                   Book Now
                 </button>
