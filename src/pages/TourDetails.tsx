@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/business';
 import { createWhatsAppUrl, getGeneralWhatsAppUrl } from '../utils/whatsapp';
-
+import QRCode from 'react-qr-code';
 export const TourDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const tour = slug ? getTourBySlug(slug) : undefined;
@@ -448,11 +448,14 @@ export const TourDetails: React.FC = () => {
                     Scan to Pay Booking Amount
                   </h4>
                   <div className="bg-[#F8F9FA] p-4 rounded-xl inline-block border border-slate-200/90 shadow-sm">
-                    <img 
-                      src="/payment-qr.jpg" 
-                      alt="Payment QR Code" 
-                      className="w-48 h-48 object-cover mx-auto mix-blend-multiply"
-                    />
+                    <div className="w-48 h-48 mx-auto bg-white p-2 rounded-lg shadow-sm flex items-center justify-center">
+                      <QRCode 
+                        value={`upi://pay?pa=${BUSINESS_INFO.upiId}&pn=${encodeURIComponent(BUSINESS_INFO.name)}&am=${tour.price}&cu=INR`}
+                        size={176}
+                        style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                        viewBox={`0 0 176 176`}
+                      />
+                    </div>
                     <div className="mt-3 text-lg font-bold text-[#E53E3E]">
                       ₹ {tour.price.toLocaleString('en-IN')} / Person
                     </div>

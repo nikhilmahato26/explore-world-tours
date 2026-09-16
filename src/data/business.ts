@@ -9,4 +9,5 @@ export const BUSINESS_INFO = {
   fullAddress: 'Suite 402, Stellar IT Park, Sector 62, Noida, Uttar Pradesh 201301',
   whatsappNumber: '919525528655',
   hours: 'Mon - Sat: 9:00 AM - 8:30 PM (24/7 On-Tour Support)',
+  upiId: 'paytmqr6uqvh@ptys',
 };
