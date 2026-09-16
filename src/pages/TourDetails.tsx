@@ -459,6 +459,9 @@ export const TourDetails: React.FC = () => {
                     <div className="mt-3 text-lg font-bold text-[#E53E3E]">
                       ₹ {tour.price.toLocaleString('en-IN')} / Person
                     </div>
+                    <div className="mt-1 text-sm font-medium text-slate-600 break-all px-2">
+                      UPI ID: {BUSINESS_INFO.upiId}
+                    </div>
                   </div>
                   <p className="text-xs text-slate-500 mt-3 px-4">
                     Please share the payment screenshot on WhatsApp after booking.
